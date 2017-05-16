@@ -1,0 +1,23 @@
+<div class="container">
+  <h1 class="text-center title">Ficha de usuario:</h1>
+  <center>
+    <div class="block card">
+      <div class="picture">
+  	    <img src=<%=@person.picture%> alt="Foto" />
+      </div>
+      <div>
+        <ul class="list-group">
+          <li class="list-group-item">Nombre: <%=@person.name%></li>
+          <li class="list-group-item">Apellido: <%=@person.surname%></li>
+    			<li class="list-group-item">DNI: <%=@person.dni%></li>
+    			<li class="list-group-item">Email: <%=@person.email%></li>
+        </ul>
+        <div class="buttonsGroup">
+    			<button type="button" class="btn btn-outline-warning"><%= link_to (fa_icon "pencil"), edit_person_path(@person)%></button>
+    			<button type="button" class="btn btn-outline-danger"><%= link_to (fa_icon "times"), [@person], method: :delete%></button>
+    			<button type="button" class="btn btn-outline-info"><%= link_to (fa_icon "paw"), 'google.es'%></button>
+        </div>
+      </div>
+    </div>
+  </center>
+</div>

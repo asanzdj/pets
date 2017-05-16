@@ -1,0 +1,16 @@
+<div class="container">
+  <%= link_to 'Nueva mascota', new_pet_path %>
+
+  <% @pets.each do |pet| %>
+    <p><%=pet.name%></p>
+    <ul>
+      <li><%=pet.owner%></li>
+      <li><%=pet.alive%></li>
+      <li><%=pet.age%></li>
+      <li><%=pet.sex%></li>
+      <li><%=pet.type%></li>
+      <li><%= link_to 'Editar', edit_pet_path(pet) %></li>
+      <li><%= link_to 'Elminar', pet_path(pet), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </ul>
+  <% end %>
+</div>

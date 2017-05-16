@@ -1,0 +1,6 @@
+<div class="container">
+  <h1>Nueva mascota</h1>
+  <%= form_for :pet, :url => url_for(:controller => 'pet', :action => 'create') do |f| %>
+    <%=render 'form', f: f%>
+  <%end%>
+</div>

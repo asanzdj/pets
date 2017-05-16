@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  owner: MyString
+  alive: 1
+  age: 1
+  sex: 1
+  type: 1
+
+two:
+  name: MyString
+  owner: MyString
+  alive: 1
+  age: 1
+  sex: 1
+  type: 1

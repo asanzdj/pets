@@ -1,0 +1,6 @@
+<div class="container">
+  <h1 class="text-center tittle">Nuevo usuario</h1>
+  <%= form_for :person, :url => url_for(:controller => 'person', :action => 'create') do |f| %>
+    <%=render 'form', f: f%>
+  <%end%>
+</div>

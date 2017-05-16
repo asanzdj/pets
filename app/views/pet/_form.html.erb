@@ -1,0 +1,49 @@
+<div class="container">
+  <% if @pet.errors.any? %>
+    <div>
+      <h2>
+        <%= pluralize(@pet.errors.count, "error") %> prohibited
+        this pet from being saved:
+      </h2>
+      <ul>
+        <% @pet.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :owner %><br>
+    <%= f.text_field :owner %>
+  </p>
+
+  <p>
+    <%= f.label :alive %><br>
+    <%= f.text_field :alive %>
+  </p>
+
+  <p>
+    <%= f.label :age %><br>
+    <%= f.text_field :age %>
+  </p>
+
+  <p>
+    <%= f.label :type %><br>
+    <%= f.text_field :type %>
+  </p>
+
+  <p>
+    <%= f.label :sex %><br>
+    <%= f.text_field :sex %>
+  </p>
+
+  <p>
+    <%= f.submit 'Guardar' %>
+  </p>
+</div>
