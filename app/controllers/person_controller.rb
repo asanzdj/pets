@@ -23,6 +23,7 @@ end
 
 def edit
   @person = Person.find(params[:id])
+  render 'index'
 end
 
 def update

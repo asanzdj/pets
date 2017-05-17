@@ -1,16 +1,33 @@
 <div class="container">
-  <%= link_to 'Nueva mascota', new_pet_path %>
-
-  <% @pets.each do |pet| %>
-    <p><%=pet.name%></p>
-    <ul>
-      <li><%=pet.owner%></li>
-      <li><%=pet.alive%></li>
-      <li><%=pet.age%></li>
-      <li><%=pet.sex%></li>
-      <li><%=pet.type%></li>
-      <li><%= link_to 'Editar', edit_pet_path(pet) %></li>
-      <li><%= link_to 'Elminar', pet_path(pet), method: :delete, data: { confirm: 'Are you sure?' } %>
-    </ul>
-  <% end %>
+  <h1 class="text-center">Tus mascotas</h1>
+  <div class=" blocks">
+    <% if @pets != nil %>
+      <% @pets.each do |pet| %>
+  		  <div class="block">
+  		    <div class="picture">
+  			    <img src=<%=pet.picture%> alt="Foto" />
+  		    </div>
+          <div>
+            <h3 class="text-center">
+              <%= link_to pet.name , pet_path(pet) %>
+            </h3>
+  		      <ul class="list-group">
+        			<li class="list-group-item">Type: <%=pet.type%></li>
+              <li class="list-group-item">Sexo: <%=pet.sex%></li>
+              <li class="list-group-item">Edad: <%=pet.age%></li>
+        			<li class="list-group-item">Edad: <%=pet.alive%></li>
+  		      </ul>
+  		      <div class="buttonsGroup">
+        			<button type="button" class="btn btn-outline-warning"><%= link_to (fa_icon "pencil"), edit_pet_path(pet)%></button>
+        			<button type="button" class="btn btn-outline-danger"><%= link_to (fa_icon "times"), [pet], method: :delete%></button>
+        			<button type="button" class="btn btn-outline-info"><%= link_to (fa_icon "paw"), controller: 'pet', action: 'index', dni: pet.dni %></button>
+  		      </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <center>
+    <button type="button" class="btn btn-outline-primary add"><%= link_to 'Añadir mascota', new_pet_path %></button>
+  </center>
 </div>

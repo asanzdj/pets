@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container main">
   <h1 class="text-center title">Ficha de usuario:</h1>
   <center>
     <div class="block card">
@@ -15,7 +15,7 @@
         <div class="buttonsGroup">
     			<button type="button" class="btn btn-outline-warning"><%= link_to (fa_icon "pencil"), edit_person_path(@person)%></button>
     			<button type="button" class="btn btn-outline-danger"><%= link_to (fa_icon "times"), [@person], method: :delete%></button>
-    			<button type="button" class="btn btn-outline-info"><%= link_to (fa_icon "paw"), 'google.es'%></button>
+    			<button type="button" class="btn btn-outline-info"><%= link_to (fa_icon "paw"), controller: 'pet', action: 'index', dni: person.dni %></button>
         </div>
       </div>
     </div>

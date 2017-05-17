@@ -19,7 +19,7 @@ def show
 end
 
 def index
-  @pets = Pet.all
+  @pets = Pet.find_by_owner(params[:dni])
 end
 
 def edit
@@ -45,6 +45,6 @@ end
 
 private
   def pet_params
-    params.require(:pet).permit(:name, :age, :owner, :alive, :sex, :type)
+    params.require(:pet).permit(:name, :age, :owner, :alive, :sex, :type, :picture)
   end
 end

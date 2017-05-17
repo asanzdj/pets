@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170516193759) do
+ActiveRecord::Schema.define(version: 20170517082556) do
 
   create_table "animal_types", force: :cascade do |t|
     t.string   "type",       limit: 255

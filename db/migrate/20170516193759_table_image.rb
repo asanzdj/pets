@@ -3,9 +3,9 @@ class TableImage < ActiveRecord::Migration
   change_table :people do |t|
     t.attachment :picture
   end
-end
+  end
 
-def self.down
-  drop_attached_file :people, :picture
-end
+  def self.down
+    drop_attached_file :people, :picture
+  end
 end
