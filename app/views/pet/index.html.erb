@@ -12,15 +12,14 @@
               <%= link_to pet.name , pet_path(pet) %>
             </h3>
   		      <ul class="list-group">
-        			<li class="list-group-item">Type: <%=pet.type%></li>
+        			<li class="list-group-item">Tipo: <%=pet.animal_type%></li>
               <li class="list-group-item">Sexo: <%=pet.sex%></li>
               <li class="list-group-item">Edad: <%=pet.age%></li>
-        			<li class="list-group-item">Edad: <%=pet.alive%></li>
+        			<li class="list-group-item">¿Vivo?: <%=pet.alive%></li>
   		      </ul>
   		      <div class="buttonsGroup">
-        			<button type="button" class="btn btn-outline-warning"><%= link_to (fa_icon "pencil"), edit_pet_path(pet)%></button>
+        			<button type="button" class="btn btn-outline-warning"><%= link_to (fa_icon "pencil"), edit_pet_path(pet, dni: params[:dni])%></button>
         			<button type="button" class="btn btn-outline-danger"><%= link_to (fa_icon "times"), [pet], method: :delete%></button>
-        			<button type="button" class="btn btn-outline-info"><%= link_to (fa_icon "paw"), controller: 'pet', action: 'index', dni: pet.dni %></button>
   		      </div>
           </div>
         </div>
@@ -28,6 +27,6 @@
     <% end %>
   </div>
   <center>
-    <button type="button" class="btn btn-outline-primary add"><%= link_to 'Añadir mascota', new_pet_path %></button>
+    <button type="button" class="btn btn-outline-primary add"><%= link_to 'Añadir mascota', new_pet_path(dni: params[:dni]) %></button>
   </center>
 </div>

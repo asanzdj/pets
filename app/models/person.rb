@@ -1,6 +1,4 @@
 class Person < ActiveRecord::Base
-  # Relation with people table
-  #has_many :pets, class_name: 'Pet', foreign_key: :owner
   # File
   has_attached_file :picture
 

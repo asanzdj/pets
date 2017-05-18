@@ -6,7 +6,7 @@ class CreatePets < ActiveRecord::Migration
       t.integer :alive
       t.integer :age
       t.integer :sex
-      t.integer :type
+      t.integer :animal_type
 
       t.timestamps null: false
     end

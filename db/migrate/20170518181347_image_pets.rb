@@ -1,13 +1,11 @@
 class ImagePets < ActiveRecord::Migration
-  def change
-    def self.up
+  def self.up
     change_table :pets do |t|
       t.attachment :picture
     end
-    end
+  end
 
-    def self.down
-      drop_attached_file :pets, :picture
-    end
+  def self.down
+    drop_attached_file :pets, :picture
   end
 end

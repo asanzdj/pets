@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170517082556) do
+ActiveRecord::Schema.define(version: 20170518181347) do
 
   create_table "animal_types", force: :cascade do |t|
     t.string   "type",       limit: 255
@@ -33,14 +33,18 @@ ActiveRecord::Schema.define(version: 20170517082556) do
   end
 
   create_table "pets", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.string   "owner",      limit: 255
+    t.string   "name",                 limit: 255
+    t.string   "owner",                limit: 255
     t.boolean  "alive"
-    t.integer  "age",        limit: 4
-    t.string   "sex",        limit: 10
-    t.string   "type",       limit: 20
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.integer  "age",                  limit: 4
+    t.string   "sex",                  limit: 10
+    t.string   "animal_type",          limit: 100
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.string   "picture_file_name",    limit: 255
+    t.string   "picture_content_type", limit: 255
+    t.integer  "picture_file_size",    limit: 4
+    t.datetime "picture_updated_at"
   end
 
   add_index "pets", ["owner"], name: "owner", using: :btree

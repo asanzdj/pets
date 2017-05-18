@@ -1,8 +1,8 @@
 <div class="container">
-  <% if @person.errors.any? %>
+  <% if @pet.errors.any? %>
     <div>
-      <% pluralize(@person.errors.count, "error") %>
-        <% @person.errors.full_messages.each do |msg| %>
+      <% pluralize(@pet.errors.count, "error") %>
+        <% @pet.errors.full_messages.each do |msg| %>
         <div class="alert alert-danger" role="alert">
           <strong>Oh no!</strong> <%= msg %>
         </div>
@@ -11,7 +11,6 @@
   <% end %>
 
   <div class="form">
-    <form id="form" method="get" action="">
       <div class="form-group row">
         <%= f.label :name, "Nombre*: ", class: "col-2 col-form-label" %>
         <div class="col-10">
@@ -19,21 +18,40 @@
         </div>
       </div>
       <div class="form-group row">
-        <%= f.label :surname, "Apellidos*: ", class: "col-2 col-form-label" %>
+        <%= f.label :age, "Edad*: ", class: "col-2 col-form-label" %>
         <div class="col-10">
-          <%= f.text_field :surname, class: "form-control", type: 'text'%>
+          <%= f.text_field :age, class: "form-control", type: 'number', min: 0%>
+        </div>
+      </div>
+      <% var_owner = params[:dni] %>
+      <div class="form-group row">
+        <%= f.label :owner, "Dueño*: ", class: "col-2 col-form-label" %>
+        <div class="col-10">
+          <%= f.text_field :owner, class: "form-control", type: 'text', value: var_owner, readonly: true%>
         </div>
       </div>
       <div class="form-group row">
-        <%= f.label :email, "Email*: ", class: "col-2 col-form-label" %>
+        <label class: "col-2 col-form-label">¿Vive?*:</label>
         <div class="col-10">
-          <%= f.text_field :email, class: "form-control", type: 'email'%>
+          <%= label :alive, "Sí ", class: "col-2 col-form-label" %>
+          <%= f.radio_button :alive, '0', class: "form-control" %>
+          <%= label :alive, "No ", class: "col-2 col-form-label" %>
+          <%= f.radio_button :alive, '0', class: "form-control" %>
         </div>
       </div>
       <div class="form-group row">
-        <%= f.label :dni, "DNI*: ", class: "col-2 col-form-label" %>
+        <%= f.label :sex, "Sexo*: ", class: "col-2 col-form-label" %>
+        <div class="col-4">
+          <%= label :sex, "Hembra ", class: "col-2 col-form-label" %>
+          <%= f.radio_button :sex, 'female', class: "form-control"%>
+          <%= label :sex, "Macho ", class: "col-2 col-form-label" %>
+          <%= f.radio_button :sex, 'male', class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <%= f.label :animal_type, "Tipo*: ", class: "col-2 col-form-label" %>
         <div class="col-10">
-          <%= f.text_field :dni, class: "form-control", type: 'text', minlength: "9", maxlength: "9"%>
+          <%= f.select :animal_type, options_for_select([["Selecciona uno", ""], "dog", "cat", "rabbit", "turtle"]), class: "form-control" %>
         </div>
       </div>
       <div class="form-group row">
@@ -47,6 +65,5 @@
       <center>
       <%= f.submit 'Guardar', class: "btn btn-outline-success" %>
       </center>
-    </form>
   </div>
 </div>
