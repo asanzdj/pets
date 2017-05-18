@@ -4,7 +4,7 @@ class ChangeTablePet < ActiveRecord::Migration
     # execute('ALTER TABLE pets_development.pets MODIFY type VARCHAR(20);');
 
     execute('ALTER TABLE pets MODIFY sex VARCHAR(10);');
-    execute('ALTER TABLE pets MODIFY type VARCHAR(20);');
+    execute('ALTER TABLE pets MODIFY animal_type VARCHAR(20);');
 
   end
 end
