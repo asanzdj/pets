@@ -31,27 +31,35 @@
         </div>
       </div>
       <div class="form-group row">
-        <label class: "col-2 col-form-label">¿Vive?*:</label>
+        <label class= "col-2 col-form-label">¿Vive?*:</label>
         <div class="col-10">
-          <%= label :alive, "Sí ", class: "col-2 col-form-label" %>
-          <%= f.radio_button :alive, '0', class: "form-control" %>
-          <%= label :alive, "No ", class: "col-2 col-form-label" %>
-          <%= f.radio_button :alive, '0', class: "form-control" %>
+          <div class="form-check form-check-inline">
+            <%= label :alive, "Sí ", class: "col-2 col-form-label" %>
+            <%= f.radio_button :alive, '1', class: "form-control" %>
+          </div>
+          <div class="form-check form-check-inline">
+            <%= label :alive, "No ", class: "col-2 col-form-label" %>
+            <%= f.radio_button :alive, '0', class: "form-control" %>
+          </div>
         </div>
       </div>
       <div class="form-group row">
-        <%= f.label :sex, "Sexo*: ", class: "col-2 col-form-label" %>
-        <div class="col-4">
-          <%= label :sex, "Hembra ", class: "col-2 col-form-label" %>
-          <%= f.radio_button :sex, 'female', class: "form-control"%>
-          <%= label :sex, "Macho ", class: "col-2 col-form-label" %>
-          <%= f.radio_button :sex, 'male', class: "form-control" %>
+        <label class= "col-2 col-form-label">Sexo*:</label>
+        <div class="col-10">
+          <div class="form-check form-check-inline">
+            <%= label :sex, "Hembra ", class: "col-2 col-form-label" %>
+            <%= f.radio_button :sex, 'female', class: "form-control"%>
+          </div>
+          <div class="form-check form-check-inline">
+            <%= label :sex, "Macho ", class: "col-2 col-form-label" %>
+            <%= f.radio_button :sex, 'male', class: "form-control" %>
+          </div>
         </div>
       </div>
       <div class="form-group row">
         <%= f.label :animal_type, "Tipo*: ", class: "col-2 col-form-label" %>
         <div class="col-10">
-          <%= f.select :animal_type, options_for_select([["Selecciona uno", ""], "dog", "cat", "rabbit", "turtle"]), class: "form-control" %>
+            <%= f.select :animal_type, options_for_select([["Selecciona uno", ""], "perro", "gato", "conejo", "tortuga"]), {}, class: "form-control" %>
         </div>
       </div>
       <div class="form-group row">

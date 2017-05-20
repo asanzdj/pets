@@ -6,10 +6,8 @@ end
 
 def create
   @pet = Pet.new(pet_params)
-  @owner = Pet.find_by_owner(params[:dni])
-  puts params[:dni]
   if @pet.save
-    redirect_to @pet
+    redirect_to controller: 'pet', action: 'index', dni: pet_params[:owner]
   else
     render 'new'
   end
@@ -20,29 +18,28 @@ def show
 end
 
 def index
-  puts params[:dni]
   @pets = Pet.where(owner: params[:dni])
 end
 
 def edit
   @pet = Pet.find(params[:id])
-  @owner = Pet.find_by_owner(params[:dni])
 end
 
 def update
   @pet = Pet.find(params[:id])
-
   if @pet.update(pet_params)
-    redirect_to pet_index_path(dni: params[:owner])
+    redirect_to controller: 'pet', action: 'index', dni: pet_params[:owner]
   else
     render 'edit'
   end
 end
 
 def destroy
+  puts 'Hey'
+  puts params[:dni]
   @pet = Pet.find(params[:id])
   @pet.destroy
-  redirect_to pet_index_path(params[:owner])
+  redirect_to controller: 'pet', action: 'index', dni: params[:dni]
 end
 
 private

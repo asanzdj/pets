@@ -6,8 +6,8 @@ class Pet < ActiveRecord::Base
   validates :name, presence: true
   validates :age, presence: true
   # validates :alive, presence: true
-  validates :sex, presence: true, inclusion: {in: %w(male female), message: "%{value} is not a valid sex"}
-  validates :animal_type, presence: true, inclusion: {in: %w(dog cat turtle rabbit), message: "%{value} is not a valid pet"}
+  validates :sex, presence: true, inclusion: {in: %w(male female), message: "%{value} no es válido"}
+  validates :animal_type, presence: true, inclusion: {in: %w(perro gato tortuga conejo), message: "%{value} no es válido"}
   validates :owner, presence: true
   validates_attachment_content_type :picture, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
