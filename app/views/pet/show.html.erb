@@ -1,3 +1,29 @@
-<div class="container">
-  <h1>Ficha de la mascota</h1>
+<div class="container main">
+  <h1 class="text-center title">Ficha de la mascota:</h1>
+  <div class="block">
+    <div class="image">
+      <img src=<%=@pet.picture%> alt="Pet image" />
+    </div>
+    <div class="content">
+      <ul class="info">
+        <li><b>Nombre: </b> <%=@pet.name%></li>
+        <li><b>Edad: </b> <%=@pet.age%> años</li>
+        <% if @pet.sex == 'female' %>
+            <li><b>¿Está vivo? </b>hembra</li>
+        <% else %>
+            <li><b>¿Está vivo? </b>macho</li>
+        <% end %>
+        <li><b>Tipo: </b> <%=@pet.animal_type%></li>
+        <% if @pet.alive == true %>
+            <li><b>¿Está vivo? </b>Sí</li>
+        <% else %>
+            <li><b>¿Está vivo? </b>No</li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="buttonsGroup">
+      <button type="button" class="btn btn-outline-warning"><%= link_to (fa_icon "pencil"), edit_pet_path(@pet, dni: @pet.owner)%></button>
+      <button type="button" class="btn btn-outline-danger"><%= link_to (fa_icon "times"), pet_path(@pet, dni: @pet.owner), method: :delete%></button>
+    </div>
+  </div>
 </div>
