@@ -1,28 +1,22 @@
 <div class="container">
-  <h1 class="text-center">Tus mascotas</h1>
+  <h1 class="text-center">Mis mascotas</h1>
   <div class=" blocks">
     <% if @pets != nil %>
       <% @pets.each do |pet| %>
-  		  <div class="block">
-  		    <div class="picture">
-  			    <img src=<%=pet.picture%> alt="Foto" />
-  		    </div>
-          <div>
-            <h3 class="text-center">
-              <%= link_to pet.name , pet_path(pet) %>
-            </h3>
-  		      <ul class="list-group">
-        			<li class="list-group-item">Tipo: <%=pet.animal_type%></li>
-              <li class="list-group-item">Sexo: <%=pet.sex%></li>
-              <li class="list-group-item">Edad: <%=pet.age%></li>
-        			<li class="list-group-item">¿Vivo?: <%=pet.alive%></li>
-  		      </ul>
-  		      <div class="buttonsGroup">
-        			<button type="button" class="btn btn-outline-warning"><%= link_to (fa_icon "pencil"), edit_pet_path(pet, dni: params[:dni])%></button>
-        			<button type="button" class="btn btn-outline-danger"><%= link_to (fa_icon "times"), [pet], method: :delete, dni: params[:dni]%></button>
-  		      </div>
+      <div class="card" style="width: 20rem;">
+        <center>
+          <div class="picture">
+            <img class="card-img-top" src="<%=pet.picture%>" alt="Person image">
           </div>
+        </center>
+        <div class="card-block">
+          <h4 class="card-title text-center"><%=pet.name%></h4>
         </div>
+        <div class="buttonsGroup">
+          <button type="button" class="btn btn-outline-warning"><%= link_to (fa_icon "pencil"), edit_pet_path(pet, dni: params[:dni])%></button>
+          <button type="button" class="btn btn-outline-danger"><%= link_to (fa_icon "times"), pet_path(pet, dni: params[:dni]), method: :delete%></button>
+        </div>
+      </div>
       <% end %>
     <% end %>
   </div>

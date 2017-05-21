@@ -11,7 +11,7 @@ end
 def create
   @person = Person.new(person_params)
   if @person.save
-    render 'index'
+    redirect_to action: 'index'
   else
     render 'new'
   end
@@ -29,7 +29,7 @@ def update
   @person = Person.find(params[:id])
 
   if @person.update(person_params)
-    redirect_to @person
+    redirect_to action: 'index'
   else
     render 'edit'
   end
@@ -39,7 +39,7 @@ def destroy
   @person = Person.find(params[:id])
   @person.destroy
 
-  render 'index'
+  redirect_to action: 'index'
 end
 
 private

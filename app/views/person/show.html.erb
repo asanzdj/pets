@@ -1,23 +1,20 @@
 <div class="container main">
   <h1 class="text-center title">Ficha de usuario:</h1>
-  <center>
-    <div class="block card">
-      <div class="picture">
-  	    <img src=<%=@person.picture%> alt="Foto" />
-      </div>
-      <div>
-        <ul class="list-group">
-          <li class="list-group-item">Nombre: <%=@person.name%></li>
-          <li class="list-group-item">Apellido: <%=@person.surname%></li>
-    			<li class="list-group-item">DNI: <%=@person.dni%></li>
-    			<li class="list-group-item">Email: <%=@person.email%></li>
-        </ul>
-        <div class="buttonsGroup">
-    			<button type="button" class="btn btn-outline-warning"><%= link_to (fa_icon "pencil"), edit_person_path(@person)%></button>
-    			<button type="button" class="btn btn-outline-danger"><%= link_to (fa_icon "times"), [@person], method: :delete%></button>
-    			<button type="button" class="btn btn-outline-info"><%= link_to (fa_icon "paw"), controller: 'pet', action: 'index', dni: @person.dni %></button>
-        </div>
-      </div>
+  <div class="block">
+    <div class="image">
+      <img src=<%=@person.picture%> alt="Pet image" />
     </div>
-  </center>
+    <div class="content">
+      <ul class="info">
+        <li><b>Nombre completo:</b> <%=@person.name%> <%=@person.surname%></li>
+        <li><b>Email:</b> <%=@person.email%></li>
+        <li><b>DNI:</b> <%=@person.dni%> <%=@person.surname%></li>
+      </ul>
+    </div>
+    <div class="buttonsGroup">
+      <button type="button" class="btn btn-outline-warning"><%= link_to (fa_icon "pencil"), edit_person_path(@person)%></button>
+      <button type="button" class="btn btn-outline-danger"><%= link_to (fa_icon "times"), [@person], method: :delete%></button>
+      <button type="button" class="btn btn-outline-info"><%= link_to (fa_icon "paw"), controller: 'pet', action: 'index', dni: @person.dni %></button>
+    </div>
+  </div>
 </div>

@@ -35,11 +35,9 @@ def update
 end
 
 def destroy
-  puts 'Hey'
-  puts params[:dni]
   @pet = Pet.find(params[:id])
   @pet.destroy
-  redirect_to controller: 'pet', action: 'index', dni: params[:owner]
+  redirect_to action: 'index', dni: params[:dni]
 end
 
 private

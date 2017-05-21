@@ -35,11 +35,11 @@
         <div class="col-10">
           <div class="form-check form-check-inline">
             <%= label :alive, "Sí ", class: "col-2 col-form-label" %>
-            <%= f.radio_button :alive, '1', class: "form-control" %>
+            <%= f.radio_button :alive, 'true', class: "form-control" %>
           </div>
           <div class="form-check form-check-inline">
             <%= label :alive, "No ", class: "col-2 col-form-label" %>
-            <%= f.radio_button :alive, '0', class: "form-control" %>
+            <%= f.radio_button :alive, 'false', class: "form-control" %>
           </div>
         </div>
       </div>
@@ -59,11 +59,11 @@
       <div class="form-group row">
         <%= f.label :animal_type, "Tipo*: ", class: "col-2 col-form-label" %>
         <div class="col-10">
-            <%= f.select :animal_type, options_for_select([["Selecciona uno", ""], "perro", "gato", "conejo", "tortuga"]), {}, class: "form-control" %>
+            <%= f.select :animal_type, options_for_select([["Selecciona uno", ""], "perro", "gato", "conejo", "tortuga"], selected: f.object.animal_type), {}, class: "form-control" %>
         </div>
       </div>
       <div class="form-group row">
-        <%= f.label :picture, "Imagen*: ", class: "col-2 col-form-label" %>
+        <%= f.label :picture, "Imagen: ", class: "col-2 col-form-label" %>
         <div class="col-10">
         <%= f.file_field :picture, class: "form-control-file", accept: ".png, .jpeg, .jpg, .gif" %>
         <small id="fileHelp" class="form-text text-muted">Permited extensions: .png, .jpeg, .jpg, .gif</small>
@@ -71,7 +71,7 @@
       </div>
       <small>Tags with * symbol are required.</small>
       <center>
-      <%= f.submit 'Guardar', class: "btn btn-outline-success" %>
+      <%= f.submit 'Guardar', class: "btn btn-outline-success add" %>
       </center>
   </div>
 </div>
