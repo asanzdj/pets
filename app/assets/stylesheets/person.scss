@@ -1,7 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:700');
+
 @mixin flex-style {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+h1 {
+  font-family: 'Amatic SC', cursive;
+  font-size: 5em;
+  margin-top: 3%;
 }
 
 .blocks {
@@ -9,18 +17,16 @@
   width: 100%;
 }
 
-.block {
-  @include flex-style;
-  border-radius: 1%;
-  border: 1px solid rgb(39, 48, 73);
-  margin: 3% 3% 0 0;
-  padding: 2%;
-  width: 320px;
+.card {
+  padding: 1%;
+  margin: 2% 2% 0 2%;
 }
 
-ul {
-  margin: 3% 3% 0 0;
-  width: 100%;
+.picture {
+  width: 60%;
+  img {
+    width: 100%;
+  }
 }
 
 .buttonsGroup {
@@ -29,13 +35,6 @@ ul {
   width: 100%;
   button {
     margin: 2%;
-  }
-}
-
-.picture {
-  width: 65%;
-  img {
-    width: 100%;
   }
 }
 

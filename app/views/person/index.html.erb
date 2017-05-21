@@ -3,26 +3,21 @@
   <div class=" blocks">
     <% if @people != nil %>
       <% @people.each do |person| %>
-  		  <div class="block">
-  		    <div class="picture">
-  			    <img src=<%=person.picture%> alt="Foto" />
-  		    </div>
-          <div>
-            <h3 class="text-center">
-              <% completedName = person.name + " " + person.surname %>
-              <%= link_to completedName, person_path(person) %>
-            </h3>
-  		      <ul class="list-group">
-        			<li class="list-group-item">DNI: <%=person.dni%></li>
-        			<li class="list-group-item">Email: <%=person.email%></li>
-  		      </ul>
-  		      <div class="buttonsGroup">
-        			<button type="button" class="btn btn-outline-warning"><%= link_to (fa_icon "pencil"), edit_person_path(person)%></button>
-        			<button type="button" class="btn btn-outline-danger"><%= link_to (fa_icon "times"), [person], method: :delete%></button>
-        			<button type="button" class="btn btn-outline-info"><%= link_to (fa_icon "paw"), controller: 'pet', action: 'index', dni: person.dni %></button>
-  		      </div>
+      <div class="card" style="width: 20rem;">
+        <center>
+          <div class="picture">
+            <img class="card-img-top" src="<%=person.picture%>" alt="Person image">
           </div>
+        </center>
+        <div class="card-block">
+          <h4 class="card-title text-center"><%=person.name%> <%=person.surname%></h4>
         </div>
+        <div class="buttonsGroup">
+          <button type="button" class="btn btn-outline-warning"><%= link_to (fa_icon "pencil"), edit_person_path(person)%></button>
+          <button type="button" class="btn btn-outline-danger"><%= link_to (fa_icon "times"), [person], method: :delete%></button>
+          <button type="button" class="btn btn-outline-info"><%= link_to (fa_icon "paw"), controller: 'pet', action: 'index', dni: person.dni %></button>
+        </div>
+      </div>
       <% end %>
     <% end %>
   </div>

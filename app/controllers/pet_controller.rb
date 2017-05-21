@@ -39,7 +39,7 @@ def destroy
   puts params[:dni]
   @pet = Pet.find(params[:id])
   @pet.destroy
-  redirect_to controller: 'pet', action: 'index', dni: params[:dni]
+  redirect_to controller: 'pet', action: 'index', dni: params[:owner]
 end
 
 private

@@ -1,14 +1,13 @@
-<div class="container">
+<div>
   <% if @person.errors.any? %>
-    <div>
-      <% pluralize(@person.errors.count, "error") %>
-        <% @person.errors.full_messages.each do |msg| %>
-        <div class="alert alert-danger" role="alert">
-          <strong>Oh no!</strong> <%= msg %>
-        </div>
-        <% end %>
-    </div>
-  <% end %>
+    <% pluralize(@person.errors.count, "error") %>
+      <% @person.errors.full_messages.each do |msg| %>
+      <div class="alert alert-danger" role="alert">
+        <strong>Oh no!</strong> <%= msg %>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
 
   <div class="form">
       <div class="form-group row">
@@ -36,7 +35,7 @@
         </div>
       </div>
       <div class="form-group row">
-        <%= f.label :picture, "Imagen*: ", class: "col-2 col-form-label" %>
+        <%= f.label :picture, "Imagen: ", class: "col-2 col-form-label" %>
         <div class="col-10">
         <%= f.file_field :picture, class: "form-control-file", accept: ".png, .jpeg, .jpg, .gif" %>
         <small id="fileHelp" class="form-text text-muted">Permited extensions: .png, .jpeg, .jpg, .gif</small>

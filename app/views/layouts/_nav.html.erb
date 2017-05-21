@@ -1,0 +1,19 @@
+<%= stylesheet_link_tag "nav" %>
+
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand brand"><%= image_tag("company/logo.png") %></a>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav myNav">
+      <li class="nav-item active">
+        <%= link_to "Inicio", {controller: 'home', action: 'index'}, class: 'nav-link' %>
+      </li>
+      &nbsp;&nbsp;
+      <li class="nav-item">
+        <%= link_to "Usuarios", {controller: 'person', action: 'index'}, class: 'nav-link' %>
+      </li>
+    </ul>
+  </div>
+</nav>
