@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170520135436) do
+ActiveRecord::Schema.define(version: 20170521151602) do
 
   create_table "animal_types", force: :cascade do |t|
     t.string   "type",       limit: 255
@@ -49,5 +49,5 @@ ActiveRecord::Schema.define(version: 20170520135436) do
 
   add_index "pets", ["owner"], name: "owner", using: :btree
 
-  add_foreign_key "pets", "people", column: "owner", primary_key: "dni", name: "pets_ibfk_1"
+  add_foreign_key "pets", "people", column: "owner", primary_key: "dni", name: "pets_ibfk_1", on_delete: :cascade
 end

@@ -1,6 +1,6 @@
 class Pet < ActiveRecord::Base
   # File
-  has_attached_file :picture
+  has_attached_file :picture, default_url: "default.gif"
 
   # Validations
   validates :name, presence: true

@@ -32,6 +32,8 @@ end
 gem "font-awesome-rails"
 # To upload files
 gem "paperclip", "~> 4.1.1"
+# Validate dni
+gem 'spanish_vat_validators'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
