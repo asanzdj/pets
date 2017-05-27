@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20170527093346) do
     t.string   "picture_content_type", limit: 255
     t.integer  "picture_file_size",    limit: 4
     t.datetime "picture_updated_at"
+    t.string   "login",                limit: 255
   end
 
   create_table "pets", force: :cascade do |t|

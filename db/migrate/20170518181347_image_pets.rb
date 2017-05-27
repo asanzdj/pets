@@ -1,8 +1,7 @@
 class ImagePets < ActiveRecord::Migration
   def self.up
     change_table :pets do |t|
-      t.attachment
-        :picture,
+      has_attached_file :picture,
         :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
         :url => "/system/:attachment/:id/:style/:filename",
         :styles => { :medium => "300x300>", :thumb => "100x100>" },
