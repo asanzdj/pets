@@ -11,7 +11,7 @@ Respecto a los miembros, se podrá: *añadir*, *eliminar* y *modificar*. Y respe
 Links
 -------------
 
-> - [Aplicación](petsteam.herokuapp.com)
+> - [Aplicación ejemplo](http://petsteam.herokuapp.com/)
 
 ----------
 
