@@ -1,6 +1,6 @@
 class PersonController < ApplicationController
 
-before_action :authorize, only: [:index, :show]
+before_action :authorize, only: [:index, :show, :delete, :create, :edit, :new, :update, :destroy]
 
 def index
   @people = Person.all

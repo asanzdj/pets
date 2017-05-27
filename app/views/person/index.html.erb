@@ -1,7 +1,7 @@
 <div class="container">
   <h1 class="text-center">Personal</h1>
   <div class=" blocks">
-    <% if @people != nil %>
+    <% if @people != nil && current_user.login %>
       <% @people.each do |person| %>
         <%if current_user.login == person.login%>
           <div class="card" style="width: 20rem;">

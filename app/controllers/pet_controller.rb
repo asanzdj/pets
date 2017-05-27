@@ -1,4 +1,5 @@
 class PetController < ApplicationController
+  before_action :authorize, only: [:index, :show, :delete, :create, :edit, :new, :update, :destroy]
 
 def new
   @pet = Pet.new

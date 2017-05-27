@@ -7,12 +7,18 @@ $a-tags: 'a, a:active, a:hover, a:visited, &:focus, &:active:focus, &:active:hov
   }
 }
 
-.myNav {
-}
-
 li {
+  color: rgb(181, 178, 178);
   #{$a-tags} {
      color: rgb(181, 178, 178);
      text-decoration: none;
    }
+}
+
+@media(min-width: 992px) {
+  .collapse {
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
 }
