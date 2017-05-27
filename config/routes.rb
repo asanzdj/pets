@@ -8,4 +8,13 @@ Rails.application.routes.draw do
   # Pets
   resources :pet
 
+  # User
+  get 'signup'  => 'user#new'
+  resources :user
+
+  # Login
+  get 'login' => 'session#new'
+  delete 'logout' => 'session#destroy'
+  resources :session
+
 end

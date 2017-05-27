@@ -1,0 +1,36 @@
+<div class="container">
+  <% if @user.errors.any? %>
+    <div>
+      <% pluralize(@user.errors.count, "error") %>
+        <% @user.errors.full_messages.each do |msg| %>
+        <div class="alert alert-danger" role="alert">
+          <strong>Oh no!</strong> <%= msg %>
+        </div>
+        <% end %>
+    </div>
+  <% end %>
+
+  <div class="form">
+    <div class="form-group row">
+      <%= f.label :login, "Usuario: ", class: "col-2 col-form-label" %>
+      <div class="col-10">
+        <%= f.text_field :login, class: "form-control", type: 'text'%>
+      </div>
+    </div>
+    <div class="form-group row">
+      <%= f.label :password, "Contraseña: ", class: "col-2 col-form-label" %>
+      <div class="col-10">
+        <%= f.text_field :password, class: "form-control", type: 'password'%>
+      </div>
+    </div>
+    <div class="form-group row">
+      <%= f.label :password_confirmation, "Repite la contraseña: ", class: "col-2 col-form-label" %>
+      <div class="col-10">
+        <%= f.text_field :password_confirmation, class: "form-control", type: 'password'%>
+      </div>
+    </div>
+    <center>
+    <%= f.submit 'Registrar', class: "btn btn-outline-success add" %>
+    </center>
+  </div>
+</div>

@@ -1,3 +1,5 @@
+$a-tags: 'a, a:active, a:hover, a:visited, &:focus, &:active:focus, &:active:hover';
+
 .brand {
   width: 6%;
   img {
@@ -6,5 +8,11 @@
 }
 
 .myNav {
-  margin-top: 0;
+}
+
+li {
+  #{$a-tags} {
+     color: rgb(181, 178, 178);
+     text-decoration: none;
+   }
 }

@@ -1,5 +1,7 @@
 class PersonController < ApplicationController
 
+before_action :authorize, only: [:index, :show]
+
 def index
   @people = Person.all
 end
@@ -44,7 +46,7 @@ end
 
 private
   def person_params
-    params.require(:person).permit(:name, :surname, :dni, :email, :picture)
+    params.require(:person).permit(:name, :surname, :dni, :email, :picture, :login)
   end
 
 end

@@ -6,6 +6,7 @@ class CreatePeople < ActiveRecord::Migration
       t.string :email
       t.string :dni
       t.string :password
+      t.string :login
 
       t.timestamps null: false
     end

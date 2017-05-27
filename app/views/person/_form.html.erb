@@ -41,6 +41,7 @@
         <small id="fileHelp" class="form-text text-muted">Permited extensions: .png, .jpeg, .jpg, .gif</small>
         </div>
       </div>
+      <%= f.hidden_field :login, value: current_user.login %>
       <small>Tags with * symbol are required.</small>
       <center>
       <%= f.submit 'Guardar', class: "btn btn-outline-success" %>

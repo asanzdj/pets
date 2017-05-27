@@ -1,0 +1,24 @@
+<div class="container">
+  <%if params[:error]%>
+    <div class="alert alert-danger" role="alert">
+      Hay un error con tus datos
+    </div>
+  <%end%>
+  <div class="form">
+    <div class="form-group row">
+      <%= f.label :login, "Usuario: ", class: "col-2 col-form-label" %>
+      <div class="col-10">
+        <%= f.text_field :login, class: "form-control", type: 'text'%>
+      </div>
+    </div>
+    <div class="form-group row">
+      <%= f.label :password, "Contraseña: ", class: "col-2 col-form-label" %>
+      <div class="col-10">
+        <%= f.text_field :password, class: "form-control", type: 'password'%>
+      </div>
+    </div>
+    <center>
+    <%= f.submit 'Entrar', class: "btn btn-outline-success add" %>
+    </center>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<div class="container">
+  <h1 class="text-center">Registrate o <%= link_to 'accede', controller: 'session', action: 'new' %></h1>
+  <%= form_for :user, :url => url_for(:controller => 'user', :action => 'create') do |f| %>
+    <%=render 'form', f: f%>
+  <%end%>
+</div>

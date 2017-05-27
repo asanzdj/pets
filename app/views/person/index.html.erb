@@ -3,22 +3,24 @@
   <div class=" blocks">
     <% if @people != nil %>
       <% @people.each do |person| %>
-      <div class="card" style="width: 20rem;">
-        <center>
-          <div class="picture">
-            <img class="card-img-top" src="<%=person.picture%>" alt="Person image">
+        <%if current_user.login == person.login%>
+          <div class="card" style="width: 20rem;">
+            <center>
+              <div class="picture">
+                <img class="card-img-top" src="<%=person.picture%>" alt="Person image">
+              </div>
+            </center>
+            <div class="card-block">
+              <% completeName = person.name + " " + person.surname %>
+              <h4 class="card-title text-center"><%= link_to (completeName), person_path(person) %></h4>
+            </div>
+            <div class="buttonsGroup">
+              <button type="button" class="btn btn-outline-warning"><%= link_to (fa_icon "pencil"), edit_person_path(person)%></button>
+              <button type="button" class="btn btn-outline-danger"><%= link_to (fa_icon "times"), [person], method: :delete%></button>
+              <button type="button" class="btn btn-outline-info"><%= link_to (fa_icon "paw"), controller: 'pet', action: 'index', dni: person.dni %></button>
+            </div>
           </div>
-        </center>
-        <div class="card-block">
-          <% completeName = person.name + " " + person.surname %>
-          <h4 class="card-title text-center"><%= link_to (completeName), person_path(person) %></h4>
-        </div>
-        <div class="buttonsGroup">
-          <button type="button" class="btn btn-outline-warning"><%= link_to (fa_icon "pencil"), edit_person_path(person)%></button>
-          <button type="button" class="btn btn-outline-danger"><%= link_to (fa_icon "times"), [person], method: :delete%></button>
-          <button type="button" class="btn btn-outline-info"><%= link_to (fa_icon "paw"), controller: 'pet', action: 'index', dni: person.dni %></button>
-        </div>
-      </div>
+        <%end%>
       <% end %>
     <% end %>
   </div>
