@@ -1,7 +1,7 @@
 class ImagePeople < ActiveRecord::Migration
   def self.up
     change_table :people do |t|
-      has_attached_file :picture,
+      has_attached_file :picture
     end
   end
 
