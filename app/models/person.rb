@@ -1,7 +1,7 @@
 class Person < ActiveRecord::Base
   # File
   has_attached_file :picture,
-    :default_url => "/images/default_:style_default.gif"
+    default_url: "/images/default.gif"
 
   # Validations
   validates :name, presence: true
