@@ -5,8 +5,8 @@ class CreatePets < ActiveRecord::Migration
       t.string :owner
       t.integer :alive
       t.integer :age
-      t.integer :sex
-      t.integer :animal_type
+      t.string :sex
+      t.string :animal_type
 
       t.timestamps null: false
     end
