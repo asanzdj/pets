@@ -16,6 +16,8 @@ def create
   else
     render 'new'
   end
+  rescue ActiveRecord::RecordNotUnique
+    redirect_to action: 'new', error: 'exists'
 end
 
 def show
