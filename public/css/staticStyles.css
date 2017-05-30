@@ -1,7 +1,4 @@
 .content {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
   text-align: center;
   font-size: 2.5em;
 }
