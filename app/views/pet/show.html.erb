@@ -9,9 +9,9 @@
         <li><b>Nombre: </b> <%=@pet.name%></li>
         <li><b>Edad: </b> <%=@pet.age%> años</li>
         <% if @pet.sex == 'female' %>
-            <li><b>¿Está vivo? </b>hembra</li>
+            <li><b>Sexo: </b>hembra</li>
         <% else %>
-            <li><b>¿Está vivo? </b>macho</li>
+            <li><b>Sexo: </b>macho</li>
         <% end %>
         <li><b>Tipo: </b> <%=@pet.animal_type%></li>
         <% if @pet.alive == true %>
