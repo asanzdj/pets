@@ -15,16 +15,9 @@ Links
 
 ----------
 
-Nuevas características
--------------
->- Permitir subida de imágenes para los perfiles de usuario y mascota.
-
-----------
-
 Mejoras
 ----------
 >- Sistema de registro y acceso. (Con token)
->- Restricción de borrado y modificación de usuarios.
 
 ----------
 
