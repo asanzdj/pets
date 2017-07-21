@@ -2,9 +2,8 @@ PETS TEAM
 =
 
 Aplicación  hecha en Ruby (usando su framework Ruby on Rails) para gestionar un equipo de personas y sus mascotas.
-
-Como requisitos, contamos con que: cada persona puede tener un máximo de 5 mascotas, estas pueden ser: *perro*, *gato*, *rata* y *chinchilla*.
-Respecto a los miembros, se podrá: *añadir*, *eliminar* y *modificar*. Y respecto a las mascotas se podrá: *añadir* y *modificar*. (Si una mascota fallece, no se eliminará de la lista, si no que se cambiará su estado por *muerta*)
+Utilizando una cuenta, podrás empezar a gestionar un equipo de personas y sus mascotas.
+Las acciones que permite son: creación, modificación y eliminado de los perfiles; y en el caso de las mascotas, que estas estén anidadas a las personas.
 
 ----------
 
